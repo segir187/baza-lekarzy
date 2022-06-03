@@ -175,7 +175,7 @@
 			try
 			{
 				mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-				$mysqli = new mysqli("mysql.staszic.waw.pl","segir187","staszic187","segir187");
+				$mysqli = new mysqli("mysql.staszic.waw.pl","login","haslo","baza");
 				if ($mysqli->connect_errno!=0)
 				{
 					echo "ERROR ".$mysqli->connect_errno;

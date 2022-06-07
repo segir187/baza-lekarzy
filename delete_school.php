@@ -23,14 +23,14 @@
 			error_reporting(0);
 			function queryPrep($id)
 			{
-				if (strpos($id, ';') !== false or strpos($id, '-') !== false or strpos($id, '=') or $id == false)
+				if (strpos($id, ';') !== false or strpos($id, '-') !== false or strpos($id, '=') or strpos($id, '%') !== false or strpos($id, 'union') !== false or strpos($id, 'UNION') !== false or $id == false)
 					return "1";
 				$query = "SELECT * FROM lekarze WHERE id=".$id.";";
 				return htmlentities($query, ENT_COMPAT, "UTF-8");
 			}
 			function queryDelPrep($id)
 			{
-				if (strpos($id, ';') !== false or strpos($id, '-') !== false or strpos($id, '=') or $id == false)
+				if (strpos($id, ';') !== false or strpos($id, '-') !== false or strpos($id, '=') or strpos($id, '%') !== false or strpos($id, 'union') !== false or strpos($id, 'UNION') !== false or $id == false)
 					return "1";
 				$query = "DELETE FROM lekarze WHERE id=".$id.";";
 				return htmlentities($query, ENT_COMPAT, "UTF-8");
@@ -39,7 +39,7 @@
 			try
 			{
 				mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-				$mysqli = new mysqli("mysql.staszic.waw.pl","login","haslo","baza");
+				$mysqli = new mysqli("mysql.staszic.waw.pl","segir187","staszic187","segir187");
 				if ($mysqli->connect_errno!=0)
 				{
 					echo "ERROR ".$mysqli->connect_errno;

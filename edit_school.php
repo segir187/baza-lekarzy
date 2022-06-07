@@ -32,17 +32,17 @@
 			}
 			function querySavePrep($id,$imie,$nazw,$spec,$mias,$dni)
 			{
-				if (strpos($id, ';') !== false or strpos($id, '-') !== false or strpos($id, '='))
+				if (strpos($id, ';') !== false or strpos($id, '-') !== false or strpos($id, '=') or strpos($id, '%') !== false or strpos($id, 'union') !== false or strpos($id, 'UNION') !== false)
 					return "1";
-				if(strpos($imie, ';') !== false or strpos($imie, '-') !== false or strpos($imie, '=') or $imie == false)
+				if(strpos($imie, ';') !== false or strpos($imie, '-') !== false or strpos($imie, '=') or $imie == false or strpos($imie, '%') !== false or strpos($imie, 'union') !== false or strpos($imie, 'UNION') !== false)
 					return "2";
-				if(strpos($nazw, ';') !== false or strpos($nazw, '-') !== false or strpos($nazw, '=') or $nazw == false)
+				if(strpos($nazw, ';') !== false or strpos($nazw, '-') !== false or strpos($nazw, '=') or $nazw == false or strpos($nazw, '%') !== false or strpos($nazw, 'union') !== false or strpos($nazw, 'UNION') !== false)
 					return "3";
-				if(strpos($spec, ';') !== false or strpos($spec, '-') !== false or strpos($spec, '=') or $spec == false)
+				if(strpos($spec, ';') !== false or strpos($spec, '-') !== false or strpos($spec, '=') or $spec == false  or strpos($spec, '%') !== false or strpos($spec, 'union') !== false or strpos($spec, 'UNION') !== false)
 					return "4";
-				if(strpos($mias, ';') !== false or strpos($mias, '-') !== false or strpos($mias, '=') or $mias == false)
+				if(strpos($mias, ';') !== false or strpos($mias, '-') !== false or strpos($mias, '=') or $mias == false or strpos($mias, '%') !== false or strpos($mias, 'union') !== false or strpos($mias, 'UNION') !== false)
 					return "5";
-				if(strpos($dni, ';') !== false or strpos($dni, '-') !== false or strpos($dni, '=') or $dni == false)
+				if(strpos($dni, ';') !== false or strpos($dni, '-') !== false or strpos($dni, '=') or $dni == false or strpos($dni, '%') !== false or strpos($dni, 'union') !== false or strpos($dni, 'UNION') !== false)
 					return "6";
 				if($id == false) 
 					return "1";
@@ -54,7 +54,7 @@
 			try
 			{
 				mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-				$mysqli = new mysqli("mysql.staszic.waw.pl","login","haslo","baza");
+				$mysqli = new mysqli("mysql.staszic.waw.pl","segir187","staszic187","segir187");
 				if ($mysqli->connect_errno!=0)
 				{
 					echo "ERROR ".$mysqli->connect_errno;
